@@ -11,6 +11,8 @@ from agno.agent import Agent, Message
 
 # 1. Setup Configuration
 TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+if not TOKEN:
+    raise ValueError("Invalid Token value")
 # If using ngrok, this would be: "https://xxxx-xxxx.ngrok-free.app/webhook"
 SERVICE_BASE_URL = os.getenv("SERVICE_PUBLIC_URL")
 WEBHOOK_URL = f"{SERVICE_BASE_URL}/webhook"
